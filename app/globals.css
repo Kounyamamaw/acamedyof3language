@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-parchment to-cream text-ink leading-relaxed text-lg min-h-screen;
+  }
+}
+
+@layer components {
+  /* Styles communs */
+  .section-card {
+    @apply bg-white/70 backdrop-blur-sm p-8 md:p-10 mb-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .exercise-box {
+    @apply bg-parchment-beige border-2 border-dashed p-6 md:p-8 my-6 rounded-lg relative;
+  }
+  
+  /* Français - Ton Rostandien */
+  .french-card {
+    @apply section-card border-l-4 border-gold;
+  }
+  
+  .french-header {
+    @apply font-cinzel text-burgundy;
+  }
+  
+  .french-quote {
+    @apply font-cormorant text-xl italic text-dark-burgundy py-6 px-10 my-6 bg-gradient-to-r from-gold/10 to-transparent border-l-4 border-gold relative;
+  }
+  
+  /* Darija - Marocain */
+  .darija-card {
+    @apply section-card border-l-4 border-morocco-red;
+  }
+  
+  .darija-header {
+    @apply font-arabic text-morocco-green;
+  }
+  
+  .darija-text {
+    @apply font-arabic text-right;
+  }
+  
+  /* Anglais - Britannique/Académique */
+  .english-card {
+    @apply section-card border-l-4 border-oxford-blue;
+  }
+  
+  .english-header {
+    @apply font-playfair text-oxford-blue;
+  }
+  
+  .english-quote {
+    @apply font-lora italic text-ink-blue py-6 px-10 my-6 bg-gradient-to-r from-cambridge-blue/20 to-transparent border-l-4 border-oxford-blue;
+  }
+  
+  /* Boutons de navigation */
+  .lang-button {
+    @apply px-8 py-4 rounded-lg font-semibold text-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+  }
+  
+  .french-button {
+    @apply lang-button bg-gradient-to-br from-burgundy to-dark-burgundy text-cream hover:from-dark-burgundy hover:to-burgundy;
+  }
+  
+  .darija-button {
+    @apply lang-button bg-gradient-to-br from-morocco-red to-morocco-green text-white hover:from-morocco-green hover:to-morocco-red;
+  }
+  
+  .english-button {
+    @apply lang-button bg-gradient-to-br from-oxford-blue to-ink-blue text-cream hover:from-ink-blue hover:to-oxford-blue;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out backwards;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
